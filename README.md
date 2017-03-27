@@ -13,6 +13,8 @@ Itens necessários para execução do software:
 
 # Procedimento de Instalação
 
+Faça o download ou clone o projeto, a forma mais fácil de executar a aplicação é a partir do arquivo SenSE.war presente no projeto.
+
 A partir do SenSE.war já gerado: Na pasta na qual encontra-se o Apache Tomcat, colocar o arquivo com extensão war (SenSE.war) dentro da pasta webapps e iniciar a execução do servidor. Para iniciar o servidor, o usuário deve ir na pasta de instalação do servidor Tomcat e procurar a pasta bin. Caso o usuário esteja usando uma distribuição Linux, deve executar o arquivo startup.sh da seguinte forma via linha de comando: sh startup.sh. Caso esteja usando Windows, executar o arquivo startup.bat via linha de comando ou interface gráfica do Windows.  Para acessar a aplicação, acesse o endereço http://ip_do_servidor/SenSE, na qual ip_do_servidor é o IP do servidor Tomcat junto com a porta aberta para receber as requisições.
 
 Exemplo, se o servidor estiver na máquina local e o nome do arquivo war for SenSE.war, basta acessar o endereço: http://localhost:8080/SenSE, sendo 8080 a porta na qual o servidor Tomcat foi configurada para ouvir as requisições.
