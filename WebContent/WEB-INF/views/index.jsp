@@ -68,7 +68,7 @@
 			</div>
 			<!-- /.navbar-collapse -->
 		</nav>
-		<div id="page-content-wrapper">
+	<!--  	<div id="page-content-wrapper">-->
 			<div id="page-wrapper">
 
 				<div class="container-fluid">
@@ -237,7 +237,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+	<!--  	</div>-->
 		<!-- /.row -->
 
 	</div>

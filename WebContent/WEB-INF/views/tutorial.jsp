@@ -54,8 +54,6 @@
 				<a class="navbar-brand"
 					href="${pageContext.request.contextPath}/index">SenSE</a>
 			</div>
-
-
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
@@ -191,5 +189,10 @@
 				</div>
 			</div>
 		</div>
+		                        <!-- jQuery -->
+	<script src="resources/js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

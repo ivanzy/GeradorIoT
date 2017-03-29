@@ -27,11 +27,35 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 <style>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<
+meta
+ 
+charset
+="utf-8"
+>
+<
+meta
+ 
+http-equiv
+="X-UA-Compatible"
+ 
+content
+="IE=edge"
+>
+<
+meta
+ 
+name
+="viewport"
+ 
+content
+="width=device-width
+,
+initial-scale
+=1"
+>
 </style>
-    
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
@@ -63,7 +87,7 @@
 				var s = xhr_data.split("/");
 				var x = s[0];
 				var y = s[1];
-				
+
 				var x_split = x.split(";");
 				var y_split = y.split(";");
 
@@ -71,83 +95,80 @@
 				y = [];
 				var i;
 
-				for (i = 0; i < x_split.length; i++){
+				for (i = 0; i < x_split.length; i++) {
 					x.push(x_split[i]);
 					y.push(parseInt(y_split[i]));
 				}
 				//console.log(x);
 				//console.log(y);
 
-		   //var chart = {
-				   var title = {
-						      text: 'Message Control'   
-						   };
-						   var subtitle = {
-						      text: 'Aggregates in 10s blocks'
-						   };
-						   var xAxis = {
-// 						      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-// 						         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-						      categories: x
-									       
-						   };
-						   var yAxis = {
-						      title: {
-						         text: 'Message Qnt'
-						      },
-						      plotLines: [{
-						         value: 0,
-						         width: 1,
-						         color: '#808080'
-						      }]
-						   };   
+				//var chart = {
+				var title = {
+					text : 'Message Control'
+				};
+				var subtitle = {
+					text : 'Aggregates in 10s blocks'
+				};
+				var xAxis = {
+					// 						      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+					// 						         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+					categories : x
 
-						   var tooltip = {
-						      valueSuffix: ''
-						   }
+				};
+				var yAxis = {
+					title : {
+						text : 'Message Qnt'
+					},
+					plotLines : [ {
+						value : 0,
+						width : 1,
+						color : '#808080'
+					} ]
+				};
 
-						   var legend = {
-						      layout: 'vertical',
-						      align: 'right',
-						      verticalAlign: 'middle',
-						      borderWidth: 0
-						   };
+				var tooltip = {
+					valueSuffix : ''
+				}
 
-						   var series =  [
-						      {
-						         name: 'messages',
-						         data: y
-						      } 
-// 						      {
-// 						         name: 'New York',
-// 						         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
-// 						            24.1, 20.1, 14.1, 8.6, 2.5]
-// 						      },
-// 						      {
-// 						         name: 'London',
-// 						         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 
-// 						            16.6, 14.2, 10.3, 6.6, 4.8]
-// 						      }
-						   ];
+				var legend = {
+					layout : 'vertical',
+					align : 'right',
+					verticalAlign : 'middle',
+					borderWidth : 0
+				};
 
-						   var json = {};
+				var series = [ {
+					name : 'messages',
+					data : y
+				}
+				// 						      {
+				// 						         name: 'New York',
+				// 						         data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+				// 						            24.1, 20.1, 14.1, 8.6, 2.5]
+				// 						      },
+				// 						      {
+				// 						         name: 'London',
+				// 						         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 
+				// 						            16.6, 14.2, 10.3, 6.6, 4.8]
+				// 						      }
+				];
 
-						   json.title = title;
-						   json.subtitle = subtitle;
-						   json.xAxis = xAxis;
-						   json.yAxis = yAxis;
-						   json.tooltip = tooltip;
-						   json.legend = legend;
-						   json.series = series;
+				var json = {};
 
-						   $('#container').highcharts(json);
+				json.title = title;
+				json.subtitle = subtitle;
+				json.xAxis = xAxis;
+				json.yAxis = yAxis;
+				json.tooltip = tooltip;
+				json.legend = legend;
+				json.series = series;
+
+				$('#container').highcharts(json);
 			}
 		});
 		//close javascript function	  
 		//});
 	}
-		
-		
 </script>
 
 
@@ -163,7 +184,7 @@
 <body>
 	<div id="wrapper">
 
-			<!-- Navigation -->
+		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -181,16 +202,16 @@
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li ><a
-						href="${pageContext.request.contextPath}/index"><i
+					<li><a href="${pageContext.request.contextPath}/index"><i
 							class="fa fa-fw fa-home"></i> Home</a></li>
 					<li><a href="${pageContext.request.contextPath}/tutorial"><i
 							class="fa fa-fw fa-book"></i> Tutorial</a></li>
-					<li ><a href="${pageContext.request.contextPath}/settings"><i
+					<li><a href="${pageContext.request.contextPath}/settings"><i
 							class="fa fa-fw fa-cog"></i> Settings </a></li>
-					<li class="active"><a href="${pageContext.request.contextPath}/monitoring"><i
+					<li class="active"><a
+						href="${pageContext.request.contextPath}/monitoring"><i
 							class="fa fa-fw fa-bar-chart-o"></i> Monitoring</a></li>
-			<li><a href="${pageContext.request.contextPath}/tecDetails"><i
+					<li><a href="${pageContext.request.contextPath}/tecDetails"><i
 							class="fa fa-fw fa-edit"></i>Technical Details</a></li>
 				</ul>
 			</div>
@@ -204,20 +225,18 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">
-							Monitoring 
-						</h1>
+						<h1 class="page-header">Monitoring</h1>
 						<ol class="breadcrumb">
 							<li><i class="fa fa-home"></i> <a
 								href="${pageContext.request.contextPath}/index">Home</a></li>
-							<li class="active"><i class="fa fa-bar-chart-o"></i> Monitoring</li>
+							<li class="active"><i class="fa fa-bar-chart-o"></i>
+								Monitoring</li>
 						</ol>
 						<!-- div for graphic style="width: 550px; height: 400px; margin: 0 auto"-->
-						<div class="col-lg-6" id="container" name="container" style=" height: 400px; margin: 0 auto"
-							></div>
+						<div class="col-lg-6" id="container" name="container"
+							style="height: 400px; margin: 0 auto"></div>
 						<div class="col-lg-6">
-							${info}
-							${message}
+							${info} ${message}
 							<div id="result"></div>
 						</div>
 					</div>
@@ -234,10 +253,10 @@
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
 		

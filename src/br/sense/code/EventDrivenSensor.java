@@ -198,7 +198,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				u = RandomController.nextFloat();
 				xTemp = Math.log(u) / -lambda; // seconds
 				x = Math.round(xTemp * 1000);
-				System.out.println("u: " + u + " xTemp:" + xTemp + " x:" + x);
+				//System.out.println("u: " + u + " xTemp:" + xTemp + " x:" + x);
 				try {
 					// System.out.println(x + "ms for the next message of event
 					// sensor n " + this.idSensor);
