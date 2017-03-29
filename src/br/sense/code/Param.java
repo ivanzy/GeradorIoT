@@ -9,7 +9,7 @@ public class Param {
     // Metricas 
     public static int replication = 1;
     public static int uid = 1;
-    public static int experiment_num = 9999;
+    public static int experiment_num = 1;
     public static String name_experiment = "SenSE_logFile";
     public static int number_of_experiments = 8;
     public static String path= "/home/ivan/";
