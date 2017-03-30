@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -21,6 +22,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 	private int end;
 	private int duration;
 	private String typeSend;
+	private String pDistribution;
 
 	public EventDrivenSensor(String sensorType, double lambda, int duration, String topic, CountDownLatch latch) {
 		super(sensorType, duration, topic, latch);
@@ -34,7 +36,8 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			init = 1;
 		if (end < 1)
 			end = 1;
-		//System.out.println("duration: " + this.duration + " init:" + init + " end:" + end);
+		// System.out.println("duration: " + this.duration + " init:" + init + "
+		// end:" + end);
 
 	}
 
@@ -51,11 +54,12 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			init = 1;
 		if (end < 1)
 			end = 1;
-		//System.out.println("duration: " + this.duration + " init:" + init + " end:" + end);
+		// System.out.println("duration: " + this.duration + " init:" + init + "
+		// end:" + end);
 	}
-	
-	public EventDrivenSensor(String sensorType, String[] messageType,String[] max, String[] min, double lambda, String typeSend, int duration,
-			String topic, CountDownLatch latch) {
+
+	public EventDrivenSensor(String sensorType, String[] messageType, String[] max, String[] min, double lambda,
+			String typeSend, int duration, String topic, CountDownLatch latch) {
 		super(sensorType, messageType, duration, topic, latch);
 		this.duration = duration * 1000;
 		this.idSensor = 1;
@@ -69,27 +73,30 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			init = 1;
 		if (end < 1)
 			end = 1;
-		//System.out.println("duration: " + this.duration + " init:" + init + " end:" + end);
+		// System.out.println("duration: " + this.duration + " init:" + init + "
+		// end:" + end);
 	}
-//
-//	public EventDrivenSensor(String sensorType, String[] messageType, double lambda, int duration, String topic,
-//			int max[], int min[], CountDownLatch latch) {
-//		super(sensorType, messageType, duration, topic, latch);
-//		this.idSensor = 1;
-//		this.lambda = lambda;
-//		this.duration = duration * 1000;
-//		this.typeSend = typeSend;
-//		this.init = init;
-//		this.end = end;
-//		init = this.duration / 8;
-//		end = this.duration / 12;
-//		if (init < 1)
-//			init = 1;
-//		if (end < 1)
-//			end = 1;
-//		System.out.println("duration: " + this.duration + " init:" + init + " end:" + end);
-//
-//	}
+	//
+	// public EventDrivenSensor(String sensorType, String[] messageType, double
+	// lambda, int duration, String topic,
+	// int max[], int min[], CountDownLatch latch) {
+	// super(sensorType, messageType, duration, topic, latch);
+	// this.idSensor = 1;
+	// this.lambda = lambda;
+	// this.duration = duration * 1000;
+	// this.typeSend = typeSend;
+	// this.init = init;
+	// this.end = end;
+	// init = this.duration / 8;
+	// end = this.duration / 12;
+	// if (init < 1)
+	// init = 1;
+	// if (end < 1)
+	// end = 1;
+	// System.out.println("duration: " + this.duration + " init:" + init + "
+	// end:" + end);
+	//
+	// }
 
 	@Override
 	public void run() {
@@ -132,8 +139,8 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			}
 		} else {
 			// for (int i = 0; i < messageType.length; i++) {
-			msg += "type="+this.sensorType+";resource=#;message=";
-			if (!(messageType[0].equals( "booleanTex"))) {
+			msg += "type=" + this.sensorType + ";resource=#;message=";
+			if (!(messageType[0].equals("booleanTex"))) {
 				if (max == null)
 					msg += getRandomData(messageType[0]) + ";";
 				else
@@ -154,7 +161,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 		// else if (t <= (randomEvent + duration - (duration / 12)))
 		// else if (t <= (randomEvent + duration + (duration / 12)))
 		if (typeSend.equals("variable")) {
-		//	System.out.println("VARIAVEL");
+			// System.out.println("VARIAVEL");
 			if (init != 0) {
 				if (t <= (randomEvent - init))
 					send = 0;
@@ -170,7 +177,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				send = 1;
 			}
 		} else {
-		//	System.out.println("CONTINUO");
+			// System.out.println("CONTINUO");
 			send = 1;
 		}
 		return send;
@@ -198,7 +205,8 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				u = RandomController.nextFloat();
 				xTemp = Math.log(u) / -lambda; // seconds
 				x = Math.round(xTemp * 1000);
-				//System.out.println("u: " + u + " xTemp:" + xTemp + " x:" + x);
+				// System.out.println("u: " + u + " xTemp:" + xTemp + " x:" +
+				// x);
 				try {
 					// System.out.println(x + "ms for the next message of event
 					// sensor n " + this.idSensor);
@@ -254,6 +262,32 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 
 		} while (!TimeControl.isDone());
 		System.out.println("all messages sent from event driven sensors");
+	}
+
+
+
+	private double generateLogNormal(double stddev, double mean) {
+		Random rng = new Random();
+		double stdNormal = rng.nextGaussian();
+		double normalValue = stddev * stdNormal + mean;
+		double lognormal = Math.exp(normalValue);
+		return lognormal;
+
+	}
+
+
+
+	private int generateExponential(double lambda) {
+		double u = RandomController.nextFloat();
+		double xTemp = Math.log(u) / -lambda; // seconds
+		int x = (int) Math.round(xTemp * 1000);
+		return x;
+	}
+
+	private double generateGaussian(double sd, double mean) {
+		Random r = new Random();
+		double d = r.nextGaussian() * sd + mean;// *standartDeviation+desiredMean
+		return d;
 	}
 
 	public void publish(int numberOfMsg, int cor) throws IOException {

@@ -26,6 +26,7 @@ public class MessageArray {
 			c = "";
 		msgTemporalLine = new int[20];
 		msg = new Message[50];
+		i=0;
 
 	}
 
@@ -35,16 +36,18 @@ public class MessageArray {
 		if (msgCont == 0) {
 			return s;
 		} else {
-
+			System.out.println("dentro do if");
 			msgTemporalLine[i] = msgCont;
+			System.out.println("tekporalLine: "+msgTemporalLine[i]);
+			System.out.println("cont "+msgCont);
 			msgCont = 0;
 			i++;
+			System.out.println("i:"+i + " length "+msgTemporalLine.length);
 			if (i > 19)
 				i = 0;
 			String s1 = "";
 			s = "";
 			int j = 0;
-
 			for (int temp = 1; j < msgTemporalLine.length && msgTemporalLine[j] > 0; j++, temp++) {
 				s += msgTemporalLine[j] + ";";
 				s1 += (10 * temp) + ";";
@@ -54,6 +57,8 @@ public class MessageArray {
 				s1 = (s1.substring(0, s1.length() - 1));
 				s = s1 + "/" + s;
 			}
+			System.out.println("s:"+s);
+
 			return s;
 		}
 	}
@@ -106,11 +111,7 @@ public class MessageArray {
 		return m;
 	}
 
-	public static String showExpInfo() {
-		String s = "";
 
-		return s;
-	}
 
 	private static String getColor(String color) {
 		String c = new String();

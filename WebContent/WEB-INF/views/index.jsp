@@ -80,7 +80,7 @@
 								Welcome to SenSE <small> Sensor Simulation Environment </small> 
 							</h1> 
 							<ol class="breadcrumb">
-								<li class="active"><i class="fa fa-home"></i> Index</li>
+								<li class="active"><i class="fa fa-home"></i> Home</li>
 							</ol>
 						</div>
 					</div>
