@@ -630,7 +630,7 @@
 				</div>
 				<!-- /.row -->
 				<form role=form action="run" method="post"
-					onSubmit="formatFakeArrays();">
+					onSubmit="formatFakeArrays();return validate();">
 					<div class="row">
 						<div class="col-lg-6">
 							<p><h2>Network Settings <span alt="Help Settings"
