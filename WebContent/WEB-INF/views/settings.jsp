@@ -284,14 +284,14 @@
 		//thirty row
 		var sensorType1 = document.getElementById("sensorType1");
 		var topicTD1 = document.getElementById("topicTD1");
-		var numberOfDevicesT1 = document.getElementById("numberOfDevicesT1");
+		var numberOfDevicesT1 = document.getElementById("numberOfDevices1");
 		var periodicity1 = document.getElementById("periodicity1");
 
 		//4-th row
 		var sensorTypeE1 = document.getElementById("sensorTypeE1");
 		var topicED1 = document.getElementById("topicED1");
 		var arrivalMode1 = document.getElementById("arrivalMode1");
-		var periodicity1 = document.getElementById("lambdaE1");
+		var lambdaE1 = document.getElementById("lambdaE1");
 		//var duration1 = document.getElementById("duration1");
 		var dataTypeE11 = document.getElementById("dataTypeE11");
 
@@ -459,7 +459,7 @@
 		//check row four
 		if (sensorTypeE1.value.length > 0 && topicED1.value.length > 0
 				&& arrivalMode1.value.length > 0
-				&& periodicity1.value.length > 0
+				&& lambdaE1.value.length > 0
 				&& dataTypeE11.value.length > 0) {
 
 			if (isNaN(periodicity1.value)) {
