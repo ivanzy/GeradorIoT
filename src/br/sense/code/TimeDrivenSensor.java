@@ -166,7 +166,15 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 			}
 			Collections.sort(sensor);
 			temp = sensor.peek();
-
+			
+			try {
+				System.out.println("tempo de espera de primeira msg é "+temp.getStartSend());
+				Thread.sleep(temp.getStartSend());
+				System.out.println("já foi");
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			do {
 				MqttMessage message = new MqttMessage();
 				message.setPayload(m.getBytes());

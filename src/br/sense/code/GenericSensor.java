@@ -77,7 +77,10 @@ public abstract class GenericSensor implements Runnable, MqttCallback {
 			msg = String.valueOf(RandomController.nextBoolean());
 			break;
 		case "char":
-			msg = String.valueOf(RandomController.nextChar());
+			do{
+				msg = String.valueOf(RandomController.nextChar());
+			}while (msg.charAt(0) == '=' || msg.charAt(0) == ';');
+
 			break;
 		default:
 			msg = "invalid";
@@ -115,7 +118,9 @@ public abstract class GenericSensor implements Runnable, MqttCallback {
 			char maxC = max.charAt(0), minC = min.charAt(0);
 			if (maxC == minC)
 				msg = max + "";
-			msg = String.valueOf(RandomController.nextChar(maxC, minC));
+			do {
+				msg = String.valueOf(RandomController.nextChar(maxC, minC));
+			} while (msg.charAt(0) == '=' || msg.charAt(0) == ';');
 			break;
 		default:
 			msg = "invalid";
