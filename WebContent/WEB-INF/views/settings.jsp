@@ -284,7 +284,7 @@
 		//thirty row
 		var sensorType1 = document.getElementById("sensorType1");
 		var topicTD1 = document.getElementById("topicTD1");
-		var numberOfDevicesT1 = document.getElementById("numberOfDevices1");
+		var numberOfDevices1 = document.getElementById("numberOfDevices1");
 		var periodicity1 = document.getElementById("periodicity1");
 
 		//4-th row
@@ -401,10 +401,10 @@
 		//row 3
 		//check row three
 		if (sensorType1.value.length > 0 && topicTD1.value.length > 0
-				&& numberOfDevicesT1.value.length > 0
+				&& numberOfDevices1.value.length > 0
 				&& periodicity1.value.length > 0) {
 
-			if (isNaN(numberOfDevicesT1.value)) {
+			if (isNaN(numberOfDevices1.value)) {
 				messages
 						.push("Enter a new time driven number of devices value!");
 				valid = false;
