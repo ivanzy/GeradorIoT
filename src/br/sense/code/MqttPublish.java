@@ -134,6 +134,7 @@ public class MqttPublish implements Runnable {
 	public static void publish() {
 		// System.out.println(Param.experiment_num + " is going to start in " +
 		// Param.time_between_exp + "s");
+		RandomController.setSeed();
 		TimeControl.setTimeOfExperiment(Param.time_of_experiment);
 		TimeControl.startTime();
 		CountDownLatch latch = new CountDownLatch(1);
@@ -166,9 +167,12 @@ public class MqttPublish implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			IdController.resetIds();
+		//IdController.resetIds();
 			//MessageArray.clean();
 		}
+		System.out.println("RESETANDO EXPERIMENTO");
+		IdController.resetIds();
+		MessageArray.clean();
 	}
 	
 	@SuppressWarnings("deprecation")
