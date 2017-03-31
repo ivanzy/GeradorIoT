@@ -170,7 +170,7 @@ public class MqttPublish implements Runnable {
 		//IdController.resetIds();
 			//MessageArray.clean();
 		}
-		System.out.println("RESETANDO EXPERIMENTO");
+		//System.out.println("RESETANDO EXPERIMENTO");
 		IdController.resetIds();
 		MessageArray.clean();
 	}
