@@ -4,8 +4,10 @@
 
 Soluções têm sido propostas para gerenciar dispositivos IoT em ambientes complexos, principalmente em Cidades Inteligentes. Embora escalabilidade seja uma característica imprescindível nesses sistemas, não existe uma plataforma de testes adequada para testar e comprovar a eficiência e escalabilidade desses softwares e os cenários propostos e testados tendem a ser simples e pontuais. O SenSE é um gerador de dados sintéticos de sensores de código aberto, flexível e genérico, desenvolvido para simular ambientes complexos, como encontrados em Cidades Inteligentes.  A ferramenta é capaz de gerar uma grande quantidade de dados de sensores heterogêneos simultaneamente, sendo capaz de simular dezenas de milhares de sensores. 
 
+#Tutorial de Instalação (vídeo) 
+https://youtu.be/8Kq3Z3NkW4A
 
-Manual de Instalação
+#Requisitos
 
 Itens necessários para execução do software:
 - Java 7 ou superior
