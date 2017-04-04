@@ -15,14 +15,14 @@ public class Param {
     public static int number_of_experiments = 8;
     public static String path= "/home/ivan/";
     public static int number_of_replications = 31; 
-    public static int time_between_exp =1; 
+    public static int time_between_exp =10; 
     public static double lambda=0;
     public static  int number_of_topics = 1;
     public static  int number_of_devices_Event = 5;
     public static  int qos = 0; // 0 - 1 - 2
-	public static  long time_of_experiment= 10; 
+	public static  long time_of_experiment= 300; 
 	public static  boolean writeFile = true;
-	public static  int eventDuration = 200000;// evento 2/3 metade do exp
+	public static  int eventDuration = 200;// evento 2/3 metade do exp
     //public static final String address = "tcp://localhost:1884";
     public static String address ="tcp://localhost:1883";//"tcp://172.31.95.127";//"tcp://172.17.132.211:1883";//"tcp://172.17.132.195:1883";"tcp://172.17.132.195:1883";
     public static int number_of_devices = 1000; 
