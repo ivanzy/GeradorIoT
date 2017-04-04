@@ -1,3 +1,24 @@
-# MQTT Java client example.
+# SenSE - Sensor Simulation Environment
 
-Sample code of the Java client to access a MQTT broker.
+Soluções têm sido propostas para gerenciar dispositivos IoT em ambientes complexos, principalmente em Cidades Inteligentes. Embora escalabilidade seja uma característica imprescindível nesses sistemas, não existe uma plataforma de testes adequada para testar e comprovar a eficiência e escalabilidade desses softwares e os cenários propostos e testados tendem a ser simples e pontuais. O SenSE é um gerador de dados sintéticos de sensores de código aberto, flexível e genérico, desenvolvido para simular ambientes complexos, como encontrados em Cidades Inteligentes.  A ferramenta é capaz de gerar uma grande quantidade de dados de sensores heterogêneos simultaneamente, sendo capaz de simular dezenas de milhares de sensores. 
+
+Tutorial de Instalação (vídeo) 
+https://youtu.be/8Kq3Z3NkW4A
+
+Requisitos
+
+Itens necessários para execução do software:
+- Java 7 ou superior
+
+
+# Procedimento de Instalação
+
+Faça o download ou clone o projeto, a forma mais fácil de executar a aplicação é a partir do arquivo SenSE_CL.jar presente no projeto.
+
+A partir do SenSE_CL.jar já gerado: Execute o comando "java -jar SenSE_CL.jar -params"
+Para executar o SenSE da linha de comando, os parâmetros são informados na hora de executar a ferramenta. 
+- "-h" : endereço IP do broker
+- "-sensor": número de sensores templates movidos por evento
+- "-lambda": parâmetro da taxa de chegada de índivíduos do sensor template movido por evento
+- "-rep": quantas vezes você quer que esse experimento configurado se repita, com intervalos de 10 segundos por replicaçao.
+- "-t": tópico MQTT a se enviar as mensagens
