@@ -36,13 +36,13 @@ public class MessageArray {
 		if (msgCont == 0) {
 			return s;
 		} else {
-			System.out.println("dentro do if");
+			//System.out.println("dentro do if");
 			msgTemporalLine[i] = msgCont;
-			System.out.println("tekporalLine: "+msgTemporalLine[i]);
-			System.out.println("cont "+msgCont);
+			//System.out.println("tekporalLine: "+msgTemporalLine[i]);
+			//System.out.println("cont "+msgCont);
 			msgCont = 0;
 			i++;
-			System.out.println("i:"+i + " length "+msgTemporalLine.length);
+			//System.out.println("i:"+i + " length "+msgTemporalLine.length);
 			if (i > 19)
 				i = 0;
 			String s1 = "";
@@ -57,7 +57,7 @@ public class MessageArray {
 				s1 = (s1.substring(0, s1.length() - 1));
 				s = s1 + "/" + s;
 			}
-			System.out.println("s:"+s);
+			//System.out.println("s:"+s);
 
 			return s;
 		}

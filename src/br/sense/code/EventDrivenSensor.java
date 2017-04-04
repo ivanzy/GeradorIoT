@@ -114,7 +114,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 		int randomControl = (int) Param.time_of_experiment * 1000;
 		do {
 			randomEvent = RandomController.nextInt(randomControl - duration);
-			System.out.println(randomEvent + "  " + duration);
+			//System.out.println(randomEvent + "  " + duration);
 			if (randomEvent + duration <= (Param.time_of_experiment) * 1000)
 				isPossible = true;
 			else
@@ -201,7 +201,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				// System.out.println("Event did not start");
 				break;
 			case 1:
-				System.out.println("Event Starting");
+				//System.out.println("Event Starting");
 				u = RandomController.nextFloat();
 				xTemp = Math.log(u) / -lambda; // seconds
 				x = Math.round(xTemp * 1000);
@@ -241,7 +241,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				break;
 			case 3:
 				double lambda3 = lambda * 3;
-				System.out.println("Event close to it's finish");
+				//System.out.println("Event close to it's finish");
 				u = RandomController.nextFloat();
 				xTemp = Math.log(u) / -lambda3; // seconds
 				x = Math.round(xTemp * 1000);
@@ -302,7 +302,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			numberOfMsg++;
 			// m += "-"+Param.replication+"-"+time;
 			m += ";P1=" + time + ";";
-			System.out.println(m);
+			//System.out.println(m);
 			MessageArray.setMsg(m, new Date(System.currentTimeMillis()), this.topic);
 			client.publish(topic, m.getBytes(), Param.qos, false);
 		} catch (MqttPersistenceException e) {

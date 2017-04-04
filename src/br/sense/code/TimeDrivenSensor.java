@@ -168,9 +168,9 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 			temp = sensor.peek();
 			
 			try {
-				System.out.println("tempo de espera de primeira msg é "+temp.getStartSend());
+			//	System.out.println("tempo de espera de primeira msg é "+temp.getStartSend());
 				Thread.sleep(temp.getStartSend());
-				System.out.println("já foi");
+				//System.out.println("já foi");
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -187,8 +187,8 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 				// m += "-"+Param.replication+"-"+time;
 				m += ";P1=" + time + ";";
 				String timeH = new Date(System.currentTimeMillis()).toString();
-				System.out.println(timeH);
-				System.out.println(m);
+			//	System.out.println(timeH);
+				//System.out.println(m);
 				MessageArray.setMsg(m, new Date(System.currentTimeMillis()), this.topic);
 				client.publish(this.topic, m.getBytes(), Param.qos, false);
 				if (Param.writeFile) {
