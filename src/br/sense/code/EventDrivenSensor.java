@@ -114,7 +114,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 		int randomControl = (int) Param.time_of_experiment * 1000;
 		do {
 			randomEvent = RandomController.nextInt(randomControl - duration);
-			System.out.println(randomEvent + "  " + duration);
+			//System.out.println(randomEvent + "  " + duration);
 			if (randomEvent + duration <= (Param.time_of_experiment) * 1000)
 				isPossible = true;
 			else
@@ -303,7 +303,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			// m += "-"+Param.replication+"-"+time;
 			m += ";P1=" + time + ";";
 			System.out.println(m);
-			MessageArray.setMsg(m, new Date(System.currentTimeMillis()), this.topic);
+			//MessageArray.setMsg(m, new Date(System.currentTimeMillis()), this.topic);
 			client.publish(topic, m.getBytes(), Param.qos, false);
 		} catch (MqttPersistenceException e) {
 			// TODO Auto-generated catch block

@@ -1,7 +1,7 @@
 package br.sense.model;
 
 public class EDSensor extends Sensor {
-	private int lambda;
+	private double lambda;
 	private int duration;
 	private String mode;
 	
@@ -72,11 +72,11 @@ public class EDSensor extends Sensor {
 		this.min = min;
 	}
 
-	public int getLambda() {
+	public double getLambda() {
 		return lambda;
 	}
 
-	public void setLambda(int lambda) {
+	public void setLambda(double lambda) {
 		this.lambda = lambda;
 	}
 
