@@ -25,6 +25,6 @@ public class Param {
 	public static  int eventDuration = 200;// evento 2/3 metade do exp
     //public static final String address = "tcp://localhost:1884";
     public static String address ="tcp://localhost:1883";//"tcp://172.31.95.127";//"tcp://172.17.132.211:1883";//"tcp://172.17.132.195:1883";"tcp://172.17.132.195:1883";
-    public static int number_of_devices = 1000; 
+    public static int number_of_devices = 0; 
     
 }

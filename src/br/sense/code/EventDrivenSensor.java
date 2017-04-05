@@ -301,7 +301,7 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 				client.connect();
 			numberOfMsg++;
 			// m += "-"+Param.replication+"-"+time;
-			m += ";P1=" + time + ";";
+			m += ";REP="+Param.replication+";P1=" + time + ";";
 			System.out.println(m);
 			//MessageArray.setMsg(m, new Date(System.currentTimeMillis()), this.topic);
 			client.publish(topic, m.getBytes(), Param.qos, false);
@@ -312,8 +312,8 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		writeFile(m, time, numberOfMsg, cor);
-
+		//writeFile(m, time, numberOfMsg, cor);
+		writeFile();
 		latch.countDown();
 	}
 
@@ -327,6 +327,16 @@ public class EventDrivenSensor extends GenericSensor implements Runnable, MqttCa
 					+ count + "\"" + ";" + "\"" + time + "\"" + ";" + "\"" + cor + "\"";
 			// devNo;msgNo;time
 			bw.write(m);
+			bw.newLine();
+		}
+	}
+	static int cont =0;
+	static private void writeFile() throws IOException{
+		cont++;
+		File arquivo = new File(Param.name_experiment + ".csv");
+		try (FileWriter fw = new FileWriter(arquivo, true); BufferedWriter bw = new BufferedWriter(fw)) {
+			
+			bw.write(String.valueOf(cont)+";"+Param.replication);
 			bw.newLine();
 		}
 	}

@@ -184,7 +184,7 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 				long time = (System.currentTimeMillis());
 				numberOfMsg++;// P1=14735427300;P2=?;P3=?;P4=?;P5=?;P6=?;P7=?;REP=-1
 				// m += "-"+Param.replication+"-"+time;
-				m += ";P1=" + time + ";";
+				m += ";REP="+Param.replication+";P1=" + time + ";";
 				String timeH = new Date(System.currentTimeMillis()).toString();
 			//	System.out.println(timeH);
 				System.out.println(m);
@@ -192,7 +192,8 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 				client.publish(this.topic, m.getBytes(), Param.qos, false);
 				if (Param.writeFile) {
 					// System.out.println("WRITE ON FILE:"+m);
-					writeFile(m, time, numberOfMsg);
+					//writeFile(m, time, numberOfMsg);
+					writeFile();
 				}
 				if (temp != null) {
 					timeToSleep = temp.getStartSend();
@@ -222,5 +223,16 @@ public class TimeDrivenSensor extends GenericSensor implements Runnable, MqttCal
 		}
 		latch.countDown();
 	}
+	private static int cont =0; 
+	static private void writeFile() throws IOException{
+		cont++;
+		File arquivo = new File(Param.name_experiment + ".csv");
+		try (FileWriter fw = new FileWriter(arquivo, true); BufferedWriter bw = new BufferedWriter(fw)) {
+			
+			bw.write(String.valueOf(cont)+";"+Param.replication);
+			bw.newLine();
+		}
+	}
+
 
 }

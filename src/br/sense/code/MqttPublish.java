@@ -8,8 +8,8 @@ import br.sense.model.*;
 public class MqttPublish implements Runnable {
 
 	private final Random random = new Random();
-	private static TDSensor[] timeSensors;
-	private static EDSensor[] eventSensors;
+	private static TDSensor[] timeSensors = null;
+	private static EDSensor[] eventSensors = null;
 	private static ArrayList<Thread> threads = new ArrayList<Thread>();
 	// TODO permitir instanciar até x sensores genéricos
 	// setar max e min para cada valor de dado de sensor
